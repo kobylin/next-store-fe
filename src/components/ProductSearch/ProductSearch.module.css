@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.content {
+}
+
+.sidebar {
+  padding-right: 20px;
+}
+
+.products {
+}
+
+.sortingContainer {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 10px;
+}
