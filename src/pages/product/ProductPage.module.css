@@ -1,0 +1,11 @@
+.main {
+
+}
+
+.main :global(.ant-card) {
+    border: none !important;
+}
+
+.cardContainer {
+    margin-top: 20px;
+}

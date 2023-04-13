@@ -1,3 +1,30 @@
-.main {
-  cursor: pointer;
+.main :global(.ant-card-meta-title) {
+  overflow: visible !important;
+  white-space: break-spaces !important;
+}
+.main :global(.ant-card-meta-description) {
+  color: blue !important;
+  font-weight: 700;
+}
+
+.image {
+  width: 100%;
+  max-width: 300px;
+}
+
+.imageWrapper {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  padding: 5px;
+}
+
+.attributesContainer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.attributesContainer :global(.ant-typography) {
+  font-size: 12px !important;
 }

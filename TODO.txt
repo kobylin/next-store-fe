@@ -1,0 +1,3 @@
+6. Deploy to my aws
+7. Commit to git
+8. Write readme

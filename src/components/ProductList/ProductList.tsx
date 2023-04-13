@@ -1,8 +1,9 @@
 import ProductCard from "@/components/ProductCard/ProductCard";
 import styles from "./ProductList.module.css";
 import { Row, Col } from "antd";
+import { memo } from "react";
 
-export default function ProductList({ products }: { products: any[] }) {
+function ProductList({ products }: { products: any[] }) {
   return (
     <Row className={styles.main} gutter={[20, 20]}>
       {products.map((p) => (
@@ -13,3 +14,5 @@ export default function ProductList({ products }: { products: any[] }) {
     </Row>
   );
 }
+
+export default memo(ProductList);

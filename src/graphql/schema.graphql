@@ -1,0 +1,80 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+type PaginationMeta {
+    count: Int!
+    offset: Int!
+    total: Int!
+}
+
+type Product {
+    attributes: [ProductAttribute!]
+    categories: [ProductCategory!]
+    createdAt: String
+    description: String
+    id: String
+    imageUrl: String
+    price: Float!
+    rating: Int
+    title: String
+}
+
+type ProductAttribute {
+    category: ProductAttributeCategory
+    createdAt: String
+    description: String
+    id: String
+    key: String
+    name: String
+}
+
+type ProductAttributeCategory {
+    attributes: [ProductAttribute!]
+    createdAt: String
+    id: String
+    key: String
+    name: String
+    order: Int
+}
+
+type ProductCategory {
+    createdAt: String
+    id: String
+    key: String
+    name: String
+    parentId: String
+}
+
+type ProductCategoryHierarchyItem {
+    children: [ProductCategoryHierarchyItem!]
+    createdAt: String
+    id: String
+    key: String
+    name: String
+    parentId: String
+}
+
+type ProductResult {
+    product: Product
+}
+
+type ProductsPaginatedResult {
+    meta: PaginationMeta!
+    products: [Product!]!
+}
+
+type Query {
+    allCategories: [ProductCategory!]
+    categoryPath(category: String!): [ProductCategory!]
+    product(id: String): Product
+    productAttributesCategories(category: String!): [ProductAttributeCategory!]
+    products(attributes: [AttributeWithCategory!], category: String, count: Int, offset: Int, orderBy: String, search: String): ProductsPaginatedResult
+}
+
+input AttributeWithCategory {
+    attribute: String!
+    category: String!
+}

@@ -1,28 +1,36 @@
 import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space } from "antd";
+import { Dropdown, MenuProps, Space } from "antd";
 import styles from "./SortingOrder.module.css";
+import { memo } from "react";
 
-const items: MenvuProps["items"] = [
+export enum SortOrder {
+  RATING = "rating",
+  CHEAP_TO_EXPENSIVE = "cheap_to_expensive",
+  EXPENSIVE_TO_CHEAP = "expensive_to_cheap",
+}
+
+const items: MenuProps["items"] = [
   {
-    key: "rating",
+    key: SortOrder.RATING,
     label: "By rating",
   },
   {
-    key: "cheap_to_expensive",
+    key: SortOrder.CHEAP_TO_EXPENSIVE,
     label: "From cheap to expensive",
   },
   {
-    key: "expensive_to_cheap",
+    key: SortOrder.EXPENSIVE_TO_CHEAP,
     label: "From expensive to cheap",
   },
 ];
-export default function SortingOrder({
+function SortingOrder({
   value,
   onChange,
 }: {
   value: string;
   onChange: (value: string) => void;
 }) {
+  // @ts-ignore
   return (
     <Dropdown
       menu={{
@@ -33,9 +41,17 @@ export default function SortingOrder({
       }}
     >
       <Space className={styles.selectedValue}>
-        {items?.find((it) => ("key" in it ? it.key === value : false))?.label}
+        {
+          (
+            items?.find((it) =>
+              it && "key" in it ? it.key === value : false
+            ) as any
+          )?.label
+        }
         <DownOutlined />
       </Space>
     </Dropdown>
   );
 }
+
+export default memo(SortingOrder);

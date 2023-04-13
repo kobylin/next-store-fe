@@ -1,0 +1,17 @@
+.main {
+
+}
+
+.categoryAttributes {
+    display: flex;
+    flex-direction: column;
+}
+
+.category {
+    margin-bottom: 10px;
+}
+
+.attribute {
+
+}
+
