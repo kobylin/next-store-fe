@@ -21,13 +21,16 @@ const responseLogger = new ApolloLink((operation, forward) => {
   });
 });
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000";
+
+console.log("NEXT_PUBLIC_API_URL", apiUrl);
+
 const client = new ApolloClient({
-  // uri: "http://localhost:4000",
   cache: new InMemoryCache(),
   ssrMode: isServer(),
   link: ApolloLink.from([
     // responseLogger,
-    new HttpLink({ uri: "http://localhost:4000" }),
+    new HttpLink({ uri: apiUrl }),
   ]),
   defaultOptions: {
     watchQuery: {},
