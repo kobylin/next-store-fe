@@ -32,4 +32,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Backend
 
-Backend repository https://github.com/kobylin/next-store-fe
+Backend repository https://github.com/kobylin/next-store-be
