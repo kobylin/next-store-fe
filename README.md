@@ -1,4 +1,6 @@
-## Web store on NextJS
+## Product store frontend
+
+Technologies: NextJS, React
 
 The frontend is implemented using React and communicates with the backend via GraphQL
 
